@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Welcome, {{ user.username }}</h2>
+    <a href="{% url 'logout' %}" class="btn btn-secondary">Logout</a>
+    <a href="{% url 'portfolio' %}" class="btn btn-success">View Portfolio</a>
+    <a href="{% url 'profile' %}" class="btn btn-danger">Create Portfolio</a>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h2>Profile</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{ profile.name }}">
+        </div>
+        <div class="form-group">
+            <label for="father_name">Father's Name</label>
+            <input type="text" class="form-control" id="father_name" name="father_name" value="{{ profile.father_name }}">
+        </div>
+        <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ profile.phone_number }}">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ profile.email }}">
+        </div>
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea class="form-control" id="bio" name="bio">{{ profile.bio }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" value="{{ profile.location }}">
+        </div>
+        <div class="form-group">
+            <label for="birth_date">Birth Date</label>
+            <input type="date" class="form-control" id="birth_date" name="birth_date" value="{{ profile.birth_date }}">
+        </div>
+        <div class="form-group">
+            <label for="education">Education</label>
+            <textarea class="form-control" id="education" name="education">{{ profile.education }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="work_experience">Work Experience</label>
+            <textarea class="form-control" id="work_experience" name="work_experience">{{ profile.work_experience }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="certifications">Certifications</label>
+            <textarea class="form-control" id="certifications" name="certifications">{{ profile.certifications }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form>
+</div>
+<div>
+    <a href="{% url 'add_project' %}" class="btn btn-danger">Add Project</a>
+</div>
+</body>
+</html>
